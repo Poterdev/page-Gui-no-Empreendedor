@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Guia do Empreendedor</title>
+    <style>
+        :root {
+            --primary-color: #1E88E5;
+            --secondary-color: #64B5F6;
+            --text-color: #333;
+            --background-color: rgba(255, 255, 255, 0.95);
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(rgba(30, 136, 229, 0.1), rgba(30, 136, 229, 0.2)), 
+                        url('/api/placeholder/1920/1080') center/cover fixed;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: var(--background-color);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+        }
+
+        iframe {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: var(--spacing);
+            margin-top: var(--spacing);
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Guia do Empreendedor</a>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="porque.html">Por quê?</a>
+                <a href="contato.html">Avalie</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <h1>Avalie Nosso Trabalho</h1>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwd4pmuQU26vHuAfstXAsz7_sRC1t_hasQhO8xk6PA6FRNDg/viewform?embedded=true" width="640" height="986" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+    </main>
+
+    <footer>
+        
+        <p>Trabalho Extensionista - Curso de Análise de Sistemas UNINTER</p>
+        <p>Desenvolvido por Erickson Oliveira Santos</p>
+        <p>Entre em contato:</p>
+        <p>
+            <a href="https://www.linkedin.com/in/erickson-santos-36a607318" target="_blank">LinkedIn</a>
+        </p>
+        <p>
+            <a href="mailto:erickson1.dev@gmail.com">E-mail</a>
+        </p>
+    </footer>
+</body>
+</html>

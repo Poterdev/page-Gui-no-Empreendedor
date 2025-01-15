@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Grátis para MEI.</title>
+    <style>
+        :root {
+            --primary-color: #1E88E5;
+            --secondary-color: #64B5F6;
+            --background-color: rgba(255, 255, 255, 0.95);
+            --text-color: #333;
+            --spacing: 2rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(rgba(30, 136, 229, 0.1), rgba(30, 136, 229, 0.2)), url('/api/placeholder/1920/1080') center/cover fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+       
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem var(--spacing);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        
+        .hero {
+            max-width: 1200px;
+            margin: var(--spacing) auto;
+            padding: var(--spacing);
+            background-color: var(--background-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            gap: var(--spacing);
+            align-items: center;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: var(--spacing);
+        }
+
+        .hero-content h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            text-align: justify;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+        
+        .topics {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing);
+        }
+
+        .topic {
+            background-color: var(--background-color);
+            border-radius: 8px;
+            margin-bottom: var(--spacing);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: stretch;
+        }
+
+        .topic:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .topic-content {
+            flex: 1;
+            padding: var(--spacing);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .topic-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .topic-content h3 {
+            color: var(--text-color);
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .topic-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .topic-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .topic-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .topic-image {
+            flex: 1;
+            min-height: 400px;
+            position: relative;
+        }
+
+        .topic-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portal-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .portal-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: var(--spacing);
+            margin-top: var(--spacing);
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            .hero-content {
+                padding-right: 0;
+            }
+
+            .hero-image {
+                min-height: 300px;
+            }
+
+            .topic {
+                flex-direction: column !important;
+            }
+
+            .topic-image {
+                min-height: 300px;
+            }
+
+            .navbar ul {
+                gap: 1rem;
+            }
+
+            .topics {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.html" class="logo">GUIA DO EMPREENDEDOR</a>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="porque.html">Por quê?</a></li>
+                <li><a href="contato.html">Avalie</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Cursos Grátis para MEI</h1>
+                <h3>Transforme Desafios em Sucesso com Gestão Inteligente! </h3>
+                <p>O empreendedorismo é o sonho de milhões de brasileiros, e a gestão eficaz é a chave para transformar esse sonho em um negócio sustentável. Dados do SEBRAE mostram que 96% das empresas abertas nos últimos anos são microempreendimentos, refletindo o espírito empreendedor do país. No entanto, o desafio de manter-se no mercado é significativo, com mais de 850 mil empresas fechadas no primeiro semestre de 2024.</p>
+                <p>Para superar esses desafios, investir em capacitação e conhecimento é essencial. Recursos gratuitos de plataformas como SEBRAE, SENAI e Brasil Mais oferecem oportunidades de aprendizado em áreas fundamentais como gestão financeira, marketing, planejamento estratégico e inovação. Tudo o que você precisa é acesso à internet e vontade de transformar sua visão em sucesso.</p>
+                <p>Esteja você começando ou buscando renovar seu negócio, este site foi criado para guiá-lo na construção de uma gestão sólida e sustentável. Explore os recursos e dê o próximo passo rumo ao sucesso!</p>
+                
+                <a href="https://youtu.be/vobOROzoGyY" class="portal-link" target="_blank">Acesse o Video Explicativo Sobre o Projeto.</a>
+                
+                
+                <p></p>
+                    <a href="/contato.html"class="portal-link" target="_blank">Avalie o conteudo.</a>    
+                </p>
+            
+            </div>
+            <div class="hero-image">
+                <img src="https://www.sagemonttax.com/wp-content/uploads/2023/07/ercfunds.jpg" alt="Empreendedorismo">
+            </div>
+            
+        </section>
+
+        <section class="topics">
+            <article class="topic">
+                <div class="topic-content">
+                    <h2>1. Gestão Administrativa e Financeira</h2>
+                    <p>Uma boa gestão administrativa e financeira é fundamental para garantir a saúde do seu negócio. Aprender a planejar financeiramente, controlar o fluxo de caixa, precificar produtos e serviços corretamente, gerenciar estoques e cumprir com as obrigações fiscais pode ser a diferença entre prosperar e enfrentar dificuldades.</p>
+                    
+                    <h3>O que você pode aprender?</h3>
+                    <ul class="topic-list">
+                        <li>Planejamento financeiro para otimizar recursos</li>
+                        <li>Controle eficaz do fluxo de caixa</li>
+                        <li>Técnicas de precificação para aumentar sua margem de lucro</li>
+                        <li>Organização de estoques para evitar perdas</li>
+                        <li>Documentação fiscal e obrigações tributárias simplificadas</li>
+                    </ul>
+                    
+                    <a href="https://sebrae.com.br/sites/PortalSebrae/cursosonline/gestao-financeira,7370b8a6a28bb610VgnVCM1000004c00210aRCRD" class="portal-link" target="_blank">SEBRAE - Gestão Financeira →</a>
+                </div>
+                <div class="topic-image">
+                    <img src="https://sebrae.com.br/Sebrae/Portal%20Sebrae/EAD2/Capa/Atualizados/xcapa_gestao-financeira_iStock-855249666.png.pagespeed.ic.UqXYz9h5ok.webp" alt="GGestão Administrativa e Financeira">
+                </div>
+            </article>
+
+            <article class="topic">
+                <div class="topic-content">
+                    <h2>2. Marketing e Vendas</h2>
+                    <p>Saber como divulgar e vender seu produto ou serviço é essencial para o sucesso no mercado. O marketing eficiente e as estratégias de vendas certas podem ajudar você a atrair clientes, construir uma marca forte e aumentar seus lucros.</p>
+                    
+                    <h3>O que você pode aprender?</h3>
+                    <ul class="topic-list">
+                        <li>Criar estratégias de marketing digital para alcançar seu público online</li>
+                        <li>Desenvolver técnicas de vendas eficazes que convertem clientes</li>
+                        <li>Oferecer um atendimento ao cliente impecável para fidelizar consumidores</li>
+                        <li>Construir uma marca que se destaque no mercado</li>
+                        <li>Analisar tendências e comportamento de mercado</li>
+                    </ul>
+                    
+                    <a href="https://sp.senai.br/curso/fundamentos-da-marketing-digital/102616" class="portal-link" target="_blank">Acessar cursos no SENAI SP →</a>
+                </div>
+                <div class="topic-image">
+                    <img src="https://autonomobrasil.com/wp-content/uploads/2020/04/senai-web-1024x539.jpg" alt="Marketing e Vendas">
+                </div>
+            </article>
+
+
+            <article class="topic">
+                <div class="topic-content">
+                    <h2>3. Gestão de Pessoas: A Base para o Sucesso em Equipe</h2>
+                    <p>A gestão de pessoas é um dos pilares mais importantes para o sucesso de qualquer negócio. Ter uma equipe bem liderada, motivada e alinhada com os objetivos da empresa não apenas melhora o ambiente de trabalho, mas também impulsiona os resultados. Aprender a liderar, entender a legislação trabalhista e desenvolver uma equipe forte são passos fundamentais para construir um negócio sustentável.</p>
+                    
+                    <h3>O que você pode aprender?</h3>
+                    <ul class="topic-list">
+                        <li>Liderança básica: Como inspirar e guiar sua equipe de forma eficiente.</li>
+                        <li>Legislação trabalhista: Conhecimentos essenciais para cumprir as obrigações legais e evitar problemas futuros.</li>
+                        <li>Recrutamento e seleção: Técnicas para atrair e contratar os melhores talentos.</li>
+                        <li>Desenvolvimento de equipe: Estratégias para capacitar, motivar e alinhar os colaboradores aos objetivos da empresa.</li>
+                        
+                    </ul>
+                    
+                    <a href="https://sebrae.com.br/sites/PortalSebrae/cursosonline/gestao-de-pessoas,eda0b8a6a28bb610VgnVCM1000004c00210aRCRD" class="portal-link" target="_blank">SEBRAE - Gestão de pessoas →</a>
+                </div>
+                <div class="topic-image">
+                    <img src="https://sebrae.com.br/Sebrae/Portal%20Sebrae/EAD2/Capa/Atualizados/xcapa_gestao-pessoas_pexels-fauxels-3184436.png.pagespeed.ic.qH0bNUrOiK.webp" alt="Gestão de Pessoas: A Base para o Sucesso em Equipe">
+                </div>
+            </article>
+
+            <article class="topic">
+                <div class="topic-content">
+                    <h2>4. Tecnologia e Inovação: Transformação Digital para o Futuro</h2>
+                    <p>A transformação digital não é mais uma opção, mas uma necessidade para qualquer negócio que deseja se manter competitivo. Dominar ferramentas digitais, automatizar processos e estabelecer uma presença online efetiva são habilidades cruciais no cenário atual. Investir em tecnologia e inovação não apenas otimiza operações, mas também abre novas oportunidades de crescimento e conexão com clientes.</p>
+                    
+                    <h3>O que você pode aprender?</h3>
+                    <ul class="topic-list">
+                        <li>Ferramentas digitais básicas: Como utilizar tecnologias essenciais para gerenciar seu negócio de forma eficiente.</li>
+                        <li>Automação de processos: Técnicas para otimizar operações e reduzir tarefas manuais repetitivas.</li>
+                        <li>Presença digital: Estratégias para construir e manter uma imagem profissional online.</li>
+                        <li>Sistemas de gestão: Implementação de ferramentas para controle e análise do seu negócio.</li>
+                        
+                    </ul>
+                    
+                    <a href="https://aprendamais.mec.gov.br/course/index.php?categoryid=12" class="portal-link" target="_blank">Acessar cursos no AprendaMais →</a>
+                </div>
+                <div class="topic-image">
+                    <img src="https://viacarreira.com/wp-content/uploads/2021/11/plataforma-aprenda-mais-cursos-gratuitos-1.png" alt="Tecnologia e Inovação: Transformação Digital para o Futuro">
+                </div>
+            </article>
+
+
+            <article class="topic">
+                <div class="topic-content">
+                    <h2>5. Planejamento Estratégico</h2>
+                    <p>O planejamento estratégico é essencial para direcionar seu negócio rumo ao sucesso. Definir objetivos claros, analisar o mercado e a concorrência, estabelecer metas realistas e monitorar resultados são práticas fundamentais para garantir o crescimento sustentável da sua empresa e se destacar no mercado.</p>
+                    
+                    <h3>O que você pode aprender?</h3>
+                    <ul class="topic-list">
+                        <li>Desenvolvimento de análise SWOT para identificar pontos fortes, fracos, oportunidades e ameaças</li>
+                        <li>Criação de metas SMART (específicas, mensuráveis, atingíveis, relevantes e temporais)</li>
+                        <li>Implementação de indicadores de desempenho (KPIs) para monitorar resultados </li>                       Elaboração de plano de negócios estruturado e profissional</li>
+                        <li>Elaboração de plano de negócios estruturado e profissional</li>
+                        <li>Técnicas de gestão da inovação para manter-se competitivo</li>
+                    </ul>
+                    
+                    <a href="https://www.ev.org.br/areas-de-interesse/negocios-e-inovacao" class="portal-link" target="_blank">Acessar Fund. Bradesco-Negocio e Inovação →</a>
+                </div>
+                <div class="topic-image">
+                    <img src="https://fabricadecursos.com.br/wp-content/uploads/2020/04/cases-fundacaobradesco.jpg" alt="Planejamento Estratégico">
+                </div>
+            </article>
+
+            <article class="topic">
+                <div class="topic-content">
+                    <h2>6. Legal e Tributário</h2>
+                    <p>O conhecimento das obrigações legais e tributárias é crucial para manter seu negócio em conformidade com a lei e evitar problemas futuros. Compreender seus direitos e deveres como MEI, manter-se em dia com as obrigações fiscais, conhecer a legislação aplicável ao seu setor e saber elaborar contratos básicos são habilidades essenciais para uma gestão responsável e segura.</p>
+                    
+                    <h3>O que você pode aprender?</h3>
+                    <ul class="topic-list">
+                        <li>Fundamentos do regime tributário MEI e suas obrigações específicas</li>
+                        <li>Gestão de documentação fiscal e emissão correta de notas fiscais</li>
+                        <li>Elaboração e análise de contratos comerciais básicos</li>
+                        <li>Conformidade com legislações setoriais e regulamentações específica</li>
+                        <li>Procedimentos para manter seu negócio regularizado e evitar problemas jurídicos</li>
+                    </ul>
+                    
+                    <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/quero-ser-mei" class="portal-link" target="_blank">Acessar Portal do Empreendedor →</a>
+                </div>
+                <div class="topic-image">
+                    <img src="https://www.galiciaeducacao.com.br/wp-content/uploads/2022/10/direito-tributario.jpg" alt="Legal e Tributário">
+                </div>
+            </article>
+
+
+            <article class="topic">
+                <div class="topic-content">
+                    <h2>7. Redes e Relacionamentos</h2>
+                    <p>Construir e manter relacionamentos sólidos é fundamental para o sucesso do seu negócio. Desenvolver habilidades de networking, estabelecer parcerias estratégicas, manter bom relacionamento com fornecedores e gerenciar sua presença nas redes sociais são competências que podem abrir portas e criar oportunidades valiosas para seu crescimento.</p>
+                    
+                    <h3>O que você pode aprender?</h3>
+                    <ul class="topic-list">
+                        <li>Técnicas efetivas de networking para expandir sua rede profissional.</li>
+                        <li>Estratégias para identificar e estabelecer parcerias comerciais benéficas.</li>
+                        <li>Gestão de relacionamento com fornecedores para garantir melhores negociações.</li>
+                        <li>Marketing digital e gestão profissional de redes sociais.</li>
+                        <li>Comunicação eficaz para fortalecer relacionamentos comerciais.</li>
+                        
+                    </ul>
+                    
+                    <a href="https://sebrae.com.br/sites/PortalSebrae/cursosonline/comunicacao-e-relacionamento-com-seus-clientes,dcd0b8a6a28bb610VgnVCM1000004c00210aRCRD" class="portal-link" target="_blank">SEBRAE - Comunicação e relacionamento com o cliente →</a>
+                </div>
+                <div class="topic-image">
+                    <img src="https://blog.kaledo.com.br/wp-content/uploads/elementor/thumbs/exemplos-marketing-de-relacionamento-compressed-pxt31op7y6baha85c6kyf27vlj3rccwkbg03veolcw.jpg" alt="Redes e Relacionamentos">
+                </div>
+            </article>
+
+            <article class="topic">
+                <div class="topic-content">
+                    <h2>8. Sustentabilidade e Responsabilidade Social</h2>
+                    <p>A sustentabilidade e responsabilidade social são cada vez mais essenciais para os negócios modernos. Adotar práticas sustentáveis e socialmente responsáveis não apenas contribui para um mundo melhor, mas também fortalece a imagem da sua empresa, reduz custos operacionais e atrai consumidores mais conscientes.</p>
+                    
+                    <h3>O que você pode aprender?</h3>
+                    <ul class="topic-list">
+                        <li>Implementação de práticas sustentáveis no dia a dia da empresa.</li>
+                        <li>Gestão eficiente de recursos e redução de desperdícios.</li>
+                        <li>Desenvolvimento de programas de responsabilidade social.</li>
+                        <li>Certificações ambientais e sociais relevantes para seu setor</li>
+                        <li>Estratégias para engajamento da comunidade local.</li>
+                        
+                    </ul>
+                    
+                    <a href="https://www.escolavirtual.gov.br/curso/1038#:~:text=Este%20curso%20%C3%A9%20para%20voc%C3%AA%21%20Nele%2C%20voc%C3%AA%20ter%C3%A1,os%20desafios%20para%20a%20implementa%C3%A7%C3%A3o%20da%20pauta%20ESG." class="portal-link" target="_blank">Acessar cursos no ENAP →</a>
+                </div>
+                <div class="topic-image">
+                    <img src="https://cdn.evg.gov.br/cursos/1038_EVG/imagem_curso_1038.png" alt="Sustentabilidade e Responsabilidade Social">
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        
+        <p>Trabalho Extensionista - Curso de Análise de Sistemas UNINTER</p>
+        <p>Desenvolvido por Erickson Oliveira Santos</p>
+        <p>Entre em contato:</p>
+        <p>
+            <a href="https://www.linkedin.com/in/erickson-santos-36a607318" target="_blank">LinkedIn</a>
+        </p>
+        <p>
+            <a href="mailto:erickson1.dev@gmail.com">E-mail</a>
+        </p>
+    </footer>
+</body>
+</html>

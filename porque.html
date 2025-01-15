@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por quê? - Guia do Empreendedor</title>
+    <style>
+        :root {
+            --primary-color: #1E88E5;
+            --secondary-color: #64B5F6;
+            --text-color: #333;
+            --background-color: rgba(255, 255, 255, 0.95);
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(rgba(30, 136, 229, 0.1), rgba(30, 136, 229, 0.2));
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: var(--background-color);
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .ods-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .ods-grid {
+            display: flex;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .ods-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .impact-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: var(--spacing);
+            margin-top: var(--spacing);
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .content-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Guia do Empreendedor</a>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="porque.html">Por quê?</a>
+                <a href="contato.html">Avalie</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <section class="content-section">
+            <h1>Por que criamos este projeto?</h1>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">3.7M</div>
+                    <p>Empresas abertas em 2024</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">96%</div>
+                    <p>São microempreendedores</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">854K</div>
+                    <p>Empresas fechadas em 2024</p>
+                </div>
+            </div>
+
+            <div class="impact-section">
+                <h2>Impacto e Relevância</h2>
+                <p>Em 2024, o Brasil testemunhou um fenômeno notável: cerca de 3,7 milhões de novas empresas foram abertas, com impressionantes 96% sendo microempreendedores. No entanto, um dado preocupante nos chama a atenção: até junho do mesmo ano, mais de 854 mil empresas encerraram suas atividades. Esta realidade nos motivou a criar uma solução que pudesse fazer a diferença.</p>
+                <br>
+                <h2>Nossa Missão</h2>
+                <p>Democratizar o acesso à educação empresarial através de uma plataforma que centraliza recursos educacionais gratuitos e de qualidade. Acreditamos que o conhecimento é a chave para a sustentabilidade dos negócios, e que todo empreendedor merece ter acesso às ferramentas necessárias para seu sucesso.</p>
+            </div>
+
+            <div class="ods-section">
+                <h2>Nosso Compromisso com o Desenvolvimento Sustentável</h2>
+                <div class="ods-grid">
+                    <div class="ods-card">
+                        <h3>Educação de Qualidade</h3>
+                        <p>Oferecemos acesso gratuito a conteúdo educacional de qualidade, promovendo o desenvolvimento profissional dos empreendedores.</p>
+                    </div>
+                    <div class="ods-card">
+                        <h3>Trabalho Decente e Crescimento Econômico</h3>
+                        <p>Capacitamos empreendedores para gerir seus negócios de forma sustentável, contribuindo para o desenvolvimento econômico local.</p>
+                    </div>
+                    <div class="ods-card">
+                        <h3>Indústria, Inovação e Infraestrutura</h3>
+                        <p>Incentivamos a adoção de práticas inovadoras e o uso de tecnologia para modernizar os pequenos negócios.</p>
+                    </div>
+                    <div class="ods-card">
+                        <h3>Parcerias e Meios de Implementação</h3>
+                        <p>Integramos recursos de diferentes instituições, criando uma rede de apoio ao empreendedor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-section">
+                <h2>Como Funciona</h2>
+                <p>Nossa plataforma organiza os melhores recursos gratuitos disponíveis em 8 áreas fundamentais para o sucesso empresarial. Todo o conteúdo é cuidadosamente selecionado de fontes confiáveis como SEBRAE, instituições financeiras e órgãos governamentais.</p>
+                <br>
+                <h2>Nosso Compromisso</h2>
+                <p>Este é um projeto 100% GRATUITO e educativo. Não solicitamos nenhuma informação pessoal ou empresarial. Nossa única missão é conectar você aos melhores recursos educacionais disponíveis gratuitamente.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        
+        <p>Trabalho Extensionista - Curso de Análise de Sistemas UNINTER</p>
+        <p>Desenvolvido por Erickson Oliveira Santos</p>
+        <p>Entre em contato:</p>
+        <p>
+            <a href="https://www.linkedin.com/in/erickson-santos-36a607318" target="_blank">LinkedIn</a>
+        </p>
+        <p>
+            <a href="mailto:erickson1.dev@gmail.com">E-mail</a>
+        </p>
+    </footer>
+</body>
+</html>
